@@ -6,6 +6,7 @@
 [![GitHub forks](https://img.shields.io/github/forks/jmxtrans/jmxtrans-agent.svg)](https://github.com/jmxtrans/jmxtrans-agent/network)
 [![GitHub stars](https://img.shields.io/github/stars/jmxtrans/jmxtrans-agent.svg)](https://github.com/jmxtrans/jmxtrans-agent/stargazers)
 
+
 ## What is jmxtrans-agent ?
 
 jmxtrans-agent is a version of [jmxtrans](http://jmxtrans.org/) intended to be used as a java agent. JmxTrans Agent has zero dependencies to ease integration.
