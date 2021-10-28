@@ -6,6 +6,8 @@
 [![GitHub forks](https://img.shields.io/github/forks/jmxtrans/jmxtrans-agent.svg)](https://github.com/jmxtrans/jmxtrans-agent/network)
 [![GitHub stars](https://img.shields.io/github/stars/jmxtrans/jmxtrans-agent.svg)](https://github.com/jmxtrans/jmxtrans-agent/stargazers)
 
+# The Depop Edit Version
+`jmxtrans-agent-1.2.12.1-Tags.jar`
 
 ## What is jmxtrans-agent ?
 
