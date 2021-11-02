@@ -11,7 +11,10 @@ jobs:
 
     steps:
       - name: Setup
-        run: apt update && apt install -y hub
+        run: |
+          curl -s -L -O https://github.com/github/hub/releases/download/v2.14.2/hub-linux-amd64-2.14.2.tgz
+          tar xzf hub*
+          cp hub*/bin/hub hub
       - name: Checkout
         uses: actions/checkout@v2
       - name: Set up JDK 11
