@@ -27,4 +27,4 @@ jobs:
       - name: Release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: hub release create -a target/jmxtrans-agent-1.2.12-SNAPSHOT.jar $(date +%Y%m%d%H%M%S)
+        run: hub release create -m "Depop Release" -a target/jmxtrans-agent-1.2.12-SNAPSHOT.jar $(date +%Y%m%d%H%M%S)
