@@ -152,6 +152,7 @@ public class StatsDOutputWriter extends AbstractOutputWriter implements OutputWr
                     case "failed": status_code = "3"; break;
                     default: status_code = "4"; logger.warning(String.format("StatsDOutputWriter defaulted unexpected status %s to status code 4", strValue));
                 }
+                logger.warning(String.format("kafka_connect_metric_%s_%s", status_code, strValue));
                 strValue = status_code;
             }
             if (metricName.contains("kafka.streams.client.state")) {
