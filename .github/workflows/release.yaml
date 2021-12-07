@@ -37,10 +37,10 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-        version=$(xmllint --xpath '/*[local-name()="project"]/*[local-name()="version"]/text()' pom.xml)
-        git config user.name "depop-machine"
-        git config user.email "platform+dev+machine@depop.com"
-        git add pom.xml
-        git commit -m "[ci skip] bump version to $version"
-        git push
-        hub release create -m "jmxtrans-agent-$version-depop" -a target/jmxtrans-agent-$version.jar $(date +%Y%m%d%H%M%S)
+          version=$(xmllint --xpath '/*[local-name()="project"]/*[local-name()="version"]/text()' pom.xml)
+          git config user.name "depop-machine"
+          git config user.email "platform+dev+machine@depop.com"
+          git add pom.xml
+          git commit -m "[ci skip] bump version to $version"
+          git push
+          hub release create -m "jmxtrans-agent-$version-depop" -a target/jmxtrans-agent-$version.jar $(date +%Y%m%d%H%M%S)
