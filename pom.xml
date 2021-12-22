@@ -100,7 +100,6 @@
 
   </dependencies>
   <build>
-    <finalName>jmxtrans-agent-1.2.12.3-Tags</finalName>
     <plugins>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
