@@ -142,6 +142,9 @@ public class StatsDOutputWriter extends AbstractOutputWriter implements OutputWr
         String type = "gauge".equalsIgnoreCase(metricType) || "g".equalsIgnoreCase(metricType) ? "g" : "c";
         String completeTags;
         String ddmetricName;
+
+        logger.warning(String.format("doubledmetriconrawingestE %s %s %s", metricName, metricType, strValue);
+
         if (statsType.equals(STATSD_DATADOG)) {
             if (metricName.contains("kafka.connect.task-metrics.status") || metricName.contains("kafka.connect.connector-metrics.status")) {
                 String status_code;
