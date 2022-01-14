@@ -143,20 +143,17 @@ public class StatsDOutputWriter extends AbstractOutputWriter implements OutputWr
         String completeTags;
         String ddmetricName;
 
-        logger.warning(String.format("doubledmetriconrawingestE %s %s %s", metricName, metricType, strValue));
-
         if (statsType.equals(STATSD_DATADOG)) {
             if (metricName.contains("kafka.connect.task-metrics.status") || metricName.contains("kafka.connect.connector-metrics.status")) {
                 String status_code;
                 switch (strValue.toLowerCase()) {
                     case "paused": status_code = "0"; logger.warning(String.format("doubledmetriconrawingestB paused %s %s %s", metricName, metricType, strValue)); break;
-                    case "unassigned": status_code = "1"; logger.warning(String.format("doubledmetriconrawingestB unassigned %s %s %s", metricName, metricType, strValue)); break;
-                    case "running": status_code = "2"; logger.warning(String.format("doubledmetriconrawingestB running %s %s %s", metricName, metricType, strValue)); break;
-                    case "failed": status_code = "3"; logger.warning(String.format("doubledmetriconrawingestB failed %s %s %s", metricName, metricType, strValue)); break;
+                    case "unassigned": status_code = "1"; break;
+                    case "running": status_code = "2"; break;
+                    case "failed": status_code = "3"; break;
                     default: status_code = "4"; logger.warning(String.format("StatsDOutputWriter defaulted unexpected status %s to status code 4", strValue));
                 }
                 strValue = status_code;
-                logger.warning(String.format("doubledmetriconrawingestC StrValue %s", strValue));
             }
             if (metricName.contains("kafka.streams.client.state")) {
                 // see https://github.com/apache/kafka/blob/trunk/streams/src/main/java/org/apache/kafka/streams/KafkaStreams.java#L180
@@ -213,11 +210,6 @@ public class StatsDOutputWriter extends AbstractOutputWriter implements OutputWr
                     .append("|")
                     .append(type)
                     .append("\n");
-        }
-        if (statsType.equals(STATSD_DATADOG)) {
-            if (metricName.contains("kafka.connect.task-metrics.status") || metricName.contains("kafka.connect.connector-metrics.status")) {
-                logger.warning(String.format("doubledmetriconrawingestD sb.toString %s", sb.toString()));
-            }
         }
         return sb.toString();
     }
