@@ -143,7 +143,7 @@ public class StatsDOutputWriter extends AbstractOutputWriter implements OutputWr
         String completeTags;
         String ddmetricName;
         if (statsType.equals(STATSD_DATADOG)) {
-            if (metricName.contains("kafka.connect.task-metrics.status") || metricName.contains("kafka.connect.connector-metrics.status")) {
+            if (metricName.contains("task-metrics.status") || metricName.contains("connector-metrics.status")) {
                 String status_code;
                 switch (strValue.toLowerCase()) {
                     case "paused": status_code = "0"; break;
